@@ -3,7 +3,9 @@
 A light-weight web server that serves any website published to IPFS. It monitors a
 BCH address and automatically updates when new content is announced by that
 address. This repository focuses on the Raspberry Pi minicomputer as a web
-server.
+server. This is what it looks like:
+
+![Raspberry Pi web server](docs/rpi.jpg)
 
 - [Here is a non-technical video](https://www.youtube.com/watch?v=RlNVyatwd5M) overview
 of how governments censor content on the internet, and how decentralized publishing
@@ -16,7 +18,8 @@ website in a decentralized, censorship-resistant way in order to leverage the
 [Streisand Effect](https://en.wikipedia.org/wiki/Streisand_effect).
 
 This is the server-side software that serves up content to users with a normal
-web browser. It works in conjunction with
+web browser. It also serves the content over IPFS and the Tor networks.
+It works in conjunction with
 the [memo-push](https://github.com/christroutner/memo-push) publishing
 tool. Memo-push is used to announce new content via the BCH network. This
 software is used to retrieve that new content from the IPFS network and serve
@@ -95,7 +98,8 @@ The .onion address for your website can be found in `keys/koa/hostname`.
 
 ## Usage
 Your device will now automatically pull down updated content from the IPFS network,
-and serve that content over IPFS, the web, and Tor.
+and serve that content over IPFS, the web, and Tor. It will automatically
+start up the software if you reboot your RPi.
 
 You announce updates to your content by using
 the [memo-push](https://github.com/christroutner/memo-push) tool. The server will
