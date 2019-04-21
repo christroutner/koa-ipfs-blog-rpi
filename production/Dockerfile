@@ -13,9 +13,6 @@ WORKDIR /home/safeuser
 # Used for debugging when there are issues.
 COPY dummyapp.js dummyapp.js
 
-# Expose the port the API will be served on.
-EXPOSE 3210
-
 # Switch to user account.
 USER safeuser
 # Prep 'sudo' commands.
@@ -26,14 +23,14 @@ VOLUME /home/safeuser/.ipfs
 WORKDIR /home/safeuser
 
 # x86
-RUN wget https://dist.ipfs.io/go-ipfs/v0.4.20/go-ipfs_v0.4.20_linux-amd64.tar.gz
-RUN tar -xvf go-ipfs_v0.4.20_linux-amd64.tar.gz
-RUN rm go-ipfs_v0.4.20_linux-amd64.tar.gz
+#RUN wget https://dist.ipfs.io/go-ipfs/v0.4.20/go-ipfs_v0.4.20_linux-amd64.tar.gz
+#RUN tar -xvf go-ipfs_v0.4.20_linux-amd64.tar.gz
+#RUN rm go-ipfs_v0.4.20_linux-amd64.tar.gz
 
 # ARM & Raspberry Pi
-#RUN wget https://dist.ipfs.io/go-ipfs/v0.4.20/go-ipfs_v0.4.20_linux-arm.tar.gz
-#RUN tar -xvf go-ipfs_v0.4.20_linux-arm.tar.gz
-#RUN rm go-ipfs_v0.4.20_linux-arm.tar.gz
+RUN wget https://dist.ipfs.io/go-ipfs/v0.4.20/go-ipfs_v0.4.20_linux-arm.tar.gz
+RUN tar -xvf go-ipfs_v0.4.20_linux-arm.tar.gz
+RUN rm go-ipfs_v0.4.20_linux-arm.tar.gz
 
 WORKDIR /home/safeuser/go-ipfs
 RUN sudo ./install.sh
@@ -58,6 +55,9 @@ COPY common.js config/env/common.js
 RUN npm install
 
 VOLUME /home/safeuser/koa-ipfs-blog/ipfs-data
+
+# Expose the port the API will be served on.
+EXPOSE 3210
 
 # Start the application.
 COPY start-production start-production

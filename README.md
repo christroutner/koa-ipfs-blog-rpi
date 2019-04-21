@@ -74,6 +74,9 @@ is installed and working correctly: `docker ps -a`
 sudo apt-get install -y python python-pip libffi-dev libssl-dev
 sudo pip install docker-compose
 ```
+  - If the above step produces an error, try it again. The install script for
+  for Docker Compose does not have robust retry logic, and will usually throw
+  an error if your internet has any hiccup. 
 
 - Add your BCH address
 to [the config file](production/common.js). This
