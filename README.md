@@ -93,5 +93,14 @@ You can speed up this processes by pre-downloading the initial content into the
 **Note:** Your website will be able to be accessed directly over the Tor network.
 The .onion address for your website can be found in `keys/koa/hostname`.
 
+## Usage
+Your device will now automatically pull down updated content from the IPFS network,
+and serve that content over IPFS, the web, and Tor.
+
+You announce updates to your content by using
+the [memo-push](https://github.com/christroutner/memo-push) tool. The server will
+monitor the BCH address associated with
+your [memo.cash](https://memo.cash) profile and auto-update.
+
 ## License
 [MIT](LICENSE.md)
