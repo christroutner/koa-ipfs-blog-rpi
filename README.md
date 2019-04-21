@@ -73,6 +73,9 @@ is installed and working correctly: `docker ps -a`
 ```
 sudo apt-get install -y python3 python3-pip
 sudo pip3 install docker-compose
+
+# If that errors, then try this:
+sudo pip install docker-compose
 ```
 
 - Add your BCH address
