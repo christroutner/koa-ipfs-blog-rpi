@@ -1,10 +1,9 @@
-# koa-ipfs-blog
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/christroutner/koa-ipfs-blog.svg)](https://greenkeeper.io/)
+# koa-ipfs-blog-rpi
 
 A light-weight web server that serves any website published to IPFS. It monitors a
 BCH address and automatically updates when new content is announced by that
-address.
+address. This repository focuses on the Raspberry Pi minicomputer as a web
+server.
 
 - [Here is a non-technical video](https://www.youtube.com/watch?v=RlNVyatwd5M) overview
 of how governments censor content on the internet, and how decentralized publishing
@@ -24,60 +23,59 @@ software is used to retrieve that new content from the IPFS network and serve
 it to users. Future versions
 will also serve content directly to the Tor network as well, via a hidden service.
 
-This project was forked from the [koa-api-boilerplate](https://github.com/christroutner/koa-api-boilerplate)
+This repository is forked
+from [koa-ipfs-blog](https://github.com/christroutner/koa-ipfs-blog). It
+targets Raspberry Pi (ARM) as the production server.
+That project was forked from
+the [koa-api-boilerplate](https://github.com/christroutner/koa-api-boilerplate)
 
+## Installation & Raspberry Pi Setup
+This document discusses the modifications necessary to run a 'production'
+website off a Raspberry Pi mini computer. The directions below assume you
+are starting with an RPi v3 B+ with a fresh installation of Raspbian OS.
+All instructions below use the command line (terminal), not the graphical
+user interface.
 
-## Requirements
-* node __^10.15.1__
-* npm __^6.7.0__
-
-## Installation
-- Clone and install dependencies:
+## Setup
+- Clone this repository and enter it:
 ```bash
-git clone https://github.com/christroutner/koa-ipfs-blog
-cd koa-ipfs-blog
-npm install
+git clone https://github.com/christroutner/koa-ipfs-blog-rpi
+cd koa-ipfs-blog-rpi
 ```
 
-- [Install IPFS](https://docs.ipfs.io/introduction/install/) and ensure the
-daemon is running by executing `ipfs daemon`.
+- (optional) Raspberry Pi comes loaded with educational software by default. If
+you are running your Pi as a dedicated device for serving web pages, you don't
+need all that bloat, and can save a lot of disk space by removing it. Run
+this shell script to remove this software:
+```bash
+./scripts/init-rpi.sh
+```
 
+- Update the Raspbian OS:
+```bash
+sudo apt-get update
+sudo apt-get upgrade -y
+```
 
-## Usage
-There are two forms of using this repository. **Development** is best for hacking
-and development of the server. **Production** packages the repository into a
-Docker container for easy deployment. It also adds a Tor docker container so
-that your website content can be accessed directly through Tor and the
-[Tor browser](https://www.torproject.org/download/).
+- Install Docker on the RPi:
+```
+curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker pi
+```
 
+- Log out, then back in. Ensure you can run this command to confirm that Docker
+is installed and working correctly: `docker ps -a`
 
-### Development
-
-- Ensure the IPFS daemon is running.
-
-- Add your BCH address
-to [the config file](config/env/common.js). This
-should be the same address associated with your memo.cash profile.
-
-- Start the server: `npm start`
-
-### Production
-It's assumed that you are starting with a fresh installation of Ubuntu
-18.04 LTS on a 64-bit machine.
-It's also assumed that you are installing as a
-[non-root user with sudo privileges](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04).
-
-- Install Docker on the host system.
-[This tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
-shows how to install Docker on a Ubuntu system. It's specifically targeted to
-Digital Ocean's cloud servers, but should work for any Ubuntnu system.
-
-- Install Docker Compose too.
-[This tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04) shows how to do so on a Ubuntu system.
+- Install Docker Compose:
+```
+sudo apt-get install -y python3 python3-pip
+sudo pip3 install docker-compose
+```
 
 - Add your BCH address
 to [the config file](production/common.js). This
-should be the same address associated with your memo.cash profile.
+should be the same address associated with your
+[memo.cash](https://memo.cash) profile.
 
 - Customize the [docker-compose.yml](docker-compose.yml) file.
 
