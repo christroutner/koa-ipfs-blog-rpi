@@ -2,8 +2,8 @@
 
 A light-weight web server that serves any website published to IPFS. It monitors a
 BCH address and automatically updates when new content is announced by that
-address. This repository focuses on the Raspberry Pi minicomputer as a web
-server. This is what it looks like:
+address. This repository focuses on the Raspberry Pi, the $50 credit-card sized
+minicomputer, as a web server. This is what it looks like:
 
 ![Raspberry Pi web server](docs/rpi.jpg)
 
