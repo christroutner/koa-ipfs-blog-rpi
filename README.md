@@ -71,10 +71,7 @@ is installed and working correctly: `docker ps -a`
 
 - Install Docker Compose:
 ```
-sudo apt-get install -y python3 python3-pip
-sudo pip3 install docker-compose
-
-# If that errors, then try this:
+sudo apt-get install -y python python-pip libffi-dev libssl-dev
 sudo pip install docker-compose
 ```
 
