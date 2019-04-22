@@ -25,11 +25,6 @@ USER safeuser
 VOLUME /home/safeuser/.ipfs
 WORKDIR /home/safeuser
 
-# x86
-#RUN wget https://dist.ipfs.io/go-ipfs/v0.4.20/go-ipfs_v0.4.20_linux-amd64.tar.gz
-#RUN tar -xvf go-ipfs_v0.4.20_linux-amd64.tar.gz
-#RUN rm go-ipfs_v0.4.20_linux-amd64.tar.gz
-
 # ARM & Raspberry Pi
 RUN wget https://dist.ipfs.io/go-ipfs/v0.4.20/go-ipfs_v0.4.20_linux-arm.tar.gz
 RUN tar -xvf go-ipfs_v0.4.20_linux-arm.tar.gz
