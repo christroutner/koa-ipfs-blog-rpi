@@ -56,6 +56,3 @@ sftp-config.json
 
 .nyc_output
 coverage
-ipfs-data/
-ipfs-config/
-keys/
