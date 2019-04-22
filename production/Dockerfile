@@ -50,7 +50,7 @@ WORKDIR /home/safeuser/koa-ipfs-blog
 
 # Copy the config file, which determins the internal port and the BCH address
 # to monitor.
-COPY common.js config/env/common.js
+COPY ipfs-config/common.js config/env/common.js
 
 # Install dependencies
 RUN npm install
