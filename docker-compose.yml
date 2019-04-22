@@ -6,7 +6,6 @@
 
 koa:
   #build: ./production/
-  #dockerfile: Dockerfile
   image: christroutner/koa-ipfs-blog-rpi
   ports:
     - "3210:3210"  # <host port>:<container port>

@@ -80,7 +80,7 @@ sudo pip install docker-compose
 ```
 
 - Add your BCH address
-to [the config file](production/common.js). This
+to [the config file](ipfs-config/common.js). This
 should be the same address associated with your
 [memo.cash](https://memo.cash) profile.
 
