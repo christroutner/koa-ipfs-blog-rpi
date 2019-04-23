@@ -50,6 +50,7 @@ VOLUME /home/safeuser/koa-ipfs-blog/ipfs-data
 
 # Expose the port the API will be served on.
 EXPOSE 3210
+EXPOSE 4001
 
 # Start the application.
 COPY start-production start-production
