@@ -22,7 +22,7 @@ USER safeuser
 
 
 # Install IPFS
-VOLUME /home/safeuser/.ipfs
+#VOLUME /home/safeuser/.ipfs
 WORKDIR /home/safeuser
 
 # ARM & Raspberry Pi
@@ -42,6 +42,10 @@ RUN git clone https://github.com/christroutner/koa-ipfs-blog
 # Switch to the desired branch. `master` is usually stable,
 # and `stage` has the most up-to-date changes.
 WORKDIR /home/safeuser/koa-ipfs-blog
+
+# Copy the config file, which determins the internal port and the BCH address
+# to monitor.
+COPY common.js config/env/common.js
 
 # Install dependencies
 RUN npm install

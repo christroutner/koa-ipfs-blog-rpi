@@ -1,5 +1,8 @@
 #!/bin/bash
 ipfs init
+
+sleep 10
+
 nohup ipfs daemon &
 
 sleep 10
@@ -12,9 +15,6 @@ sleep 10
 ipfs add -r /home/safeuser/koa-ipfs-blog/ipfs-data > /dev/null
 
 sleep 5
-
-# Copy the config file.
-cp /home/safeuser/.ipfs/common.js /home/safeuser/koa-ipfs-blog/config/env/
 
 export KOA_ENV=production
 npm start
