@@ -11,7 +11,7 @@ minicomputer, as a web server. This is what it looks like:
 of how governments censor content on the internet, and how decentralized publishing
 tools can be used to circumvent it.
 
-- [Here is a walkthrough video](https://www.youtube.com/watch?v=Ez9YXpu_Chs&t=971s) of
+- [Here is a walkthrough video](https://www.youtube.com/watch?v=Ez9YXpu_Chs) of
 how to use this repository along with
 the [memo-push](https://github.com/christroutner/memo-push) tool to publish a
 website in a decentralized, censorship-resistant way in order to leverage the
