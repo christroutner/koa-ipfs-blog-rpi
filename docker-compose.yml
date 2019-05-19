@@ -5,8 +5,8 @@
 
 
 koa:
-  #build: ./production/
-  image: christroutner/koa-ipfs-blog-rpi
+  build: ./production/
+  #image: christroutner/koa-ipfs-blog-rpi
   ports:
     - "3210:3210"  # <host port>:<container port>
     - "4001:4001" # IPFS
