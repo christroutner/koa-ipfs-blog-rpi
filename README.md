@@ -85,6 +85,8 @@ to [the config file](ipfs-config/common.js). This
 should be the same address associated with your
 [memo.cash](https://memo.cash) profile.
 
+- Build the Docker container with: `docker-compose build`
+
 - Run the docker container: `docker-compose up`
 
 - Or, run the docker container in daemon mode: `docker-compose up -d`
