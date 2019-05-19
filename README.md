@@ -23,13 +23,14 @@ It works in conjunction with
 the [memo-push](https://github.com/christroutner/memo-push) publishing
 tool. Memo-push is used to announce new content via the BCH network. This
 software is used to retrieve that new content from the IPFS network and serve
-it to users. Future versions
-will also serve content directly to the Tor network as well, via a hidden service.
+it to users. It also serves content directly to the Tor network as well,
+via a hidden service.
 
 This repository is forked
-from [koa-ipfs-blog](https://github.com/christroutner/koa-ipfs-blog). It
-targets Raspberry Pi (ARM) as the production server.
-That project was forked from
+from [koa-ipfs-blog](https://github.com/christroutner/koa-ipfs-blog). While that
+version targets a normal computer, this version targets Raspberry Pi (ARM) as
+the production server.
+The koa-ipfs-blog repo was originally forked from
 the [koa-api-boilerplate](https://github.com/christroutner/koa-api-boilerplate)
 
 ## Installation & Raspberry Pi Setup
@@ -40,7 +41,7 @@ All instructions below use the command line (terminal), not the graphical
 user interface.
 
 ## Setup
-- Clone this repository and enter it:
+- Clone this repository and enter the new directory:
 ```bash
 git clone https://github.com/christroutner/koa-ipfs-blog-rpi
 cd koa-ipfs-blog-rpi
