@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# Ensure the IPFS path is set to the persistent path.
+source ~/.profile
+
 ipfs init
 
 sleep 10
