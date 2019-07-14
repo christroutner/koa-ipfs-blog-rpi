@@ -21,7 +21,8 @@ ipfs id
 sleep 10
 
 # Add any existing data. Help speed up startup.
-ipfs add -r /home/safeuser/koa-ipfs-blog/ipfs-data > /dev/null
+#ipfs add -r /home/safeuser/koa-ipfs-blog/ipfs-data > /dev/null
+# NOTE NEEDED: This grows the ipfs-data directory every time the container is started.
 
 sleep 5
 

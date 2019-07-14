@@ -1,6 +1,7 @@
 #!/bin/bash
 docker container run --name ipfs-blog -d \
--p 3210:3210 \
--p 4001:4001 \
+-p 80:3210 \
+-p 6101:6101 \
 -v /home/trout/koa-ipfs-blog-rpi/ipfs-data:/home/safeuser/koa-ipfs-blog/ipfs-data \
---rm ipfs-blog
+--restart always \
+ipfs-blog
