@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Change the ownership of the persistant volue to ensure this app can
+# write to it.
+echo 'abcd8765' | sudo -S pwd
+sudo chown -R safeuser /home/safeuser/koa-ipfs-blog/ipfs-data
+
 # Ensure the IPFS path is set to the persistent path.
 source ~/.profile
 
